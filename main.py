@@ -14,7 +14,7 @@ from flask import Flask, request
 # Token va Webhook konfiguratsiyasi
 TOKEN = "8083606281:AAGh0eRUDablA_K-TlXhI6sCzwjdPnYAMWQ"
 bot = telebot.TeleBot(TOKEN)
-WEBHOOK_URL = "https://telegram-reklama-bot-production.up.railway.app/"
+WEBHOOK_URL = "https://telegram-reklama-bot-production.up.railway.app"
 
 # Google Sheets ulanishi
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
@@ -127,8 +127,9 @@ def getMessage():
 @app.route("/")
 def webhook():
     bot.remove_webhook()
-    bot.set_webhook(url=WEBHOOK_URL + TOKEN)
+    bot.set_webhook(url=WEBHOOK_URL + "/" + TOKEN)
     return "Bot ishga tayyor.", 200
+
 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))

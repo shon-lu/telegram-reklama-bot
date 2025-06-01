@@ -1,6 +1,7 @@
 # Reklama Telegram botining to‘liq funksional kodi (Railway uchun)
 
 import telebot
+import json
 from telebot import types
 from telebot.types import InlineKeyboardMarkup, InlineKeyboardButton
 import gspread
@@ -17,7 +18,8 @@ WEBHOOK_URL = "https://your-railway-app.up.railway.app/"
 
 # Google Sheets ulanishi
 scope = ["https://spreadsheets.google.com/feeds", "https://www.googleapis.com/auth/drive"]
-creds = ServiceAccountCredentials.from_json_keyfile_name("credentials.json", scope)
+credentials_json = json.loads(os.environ["GOOGLE_CREDENTIALS"])
+creds = ServiceAccountCredentials.from_json_keyfile_dict(credentials_json, scope)
 client = gspread.authorize(creds)
 spreadsheet = client.open("reklama")
 

@@ -1,5 +1,6 @@
-flask
 pyTelegramBotAPI
 gspread
 oauth2client
 fpdf
+flask
+requests

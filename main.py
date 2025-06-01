@@ -12,7 +12,7 @@ import os
 from flask import Flask, request
 
 # Token va Webhook konfiguratsiyasi
-TOKEN = "7620186002:AAEOKCs5i3uwS__j6Iwg3KvfqDkEzmbKDOc"
+TOKEN = "8083606281:AAGh0eRUDablA_K-TlXhI6sCzwjdPnYAMWQ"
 bot = telebot.TeleBot(TOKEN)
 WEBHOOK_URL = "https://your-railway-app.up.railway.app/"
 

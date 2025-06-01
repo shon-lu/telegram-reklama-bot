@@ -128,7 +128,7 @@ def getMessage():
 def webhook():
     bot.remove_webhook()
     bot.set_webhook(url=WEBHOOK_URL + "/" + TOKEN)
-    return "Bot ishga tayyor.", 200
+    return "Webhook o‘rnatildi", 200
 
 
 if __name__ == "__main__":
